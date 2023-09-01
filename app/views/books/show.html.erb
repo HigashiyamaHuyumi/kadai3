@@ -1,0 +1,9 @@
+<p class=color><%= flash[:notice] %></p>
+
+<p>Title:<%= @book.title %></p>
+<p>Opinion:<%= @book.opinion %></p>
+
+<p>
+  <%= link_to "Edit", edit_book_path(@book.id) %>|
+  <%= link_to "Back", "/books" %>
+</p>
