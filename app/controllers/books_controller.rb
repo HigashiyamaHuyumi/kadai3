@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   
   def create #データを追加（保存）する
     @book = Book.new(book_params)
+    @book.user_id = current_user.id
     if @book.save
      flash[:notice] ='You have created book successfully.'
      redirect_to book_path(@book.id)
@@ -47,6 +48,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.permit(:title, :opinion)
+    params.require(:book).permit(:title, :opinion)
   end
 end
