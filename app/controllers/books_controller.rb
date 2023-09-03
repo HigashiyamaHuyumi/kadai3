@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  
   def create #データを追加（保存）する
     @book = Book.new(book_params)
     if @book.save
@@ -46,6 +47,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :opinion)
+    params.permit(:title, :opinion)
   end
 end
