@@ -1,10 +1,10 @@
 <h1>User info</h1>
 
 <div>
-  <!-- %= image_tag @user.get_profile_image(100,100) %-->
+  <%= image_tag @user.get_profile_image(100,100) %>
   <p>name<%= @user.name %></p>
   <p>introduction<%= @user.introduction %></p>
 </div>
 
-<!-- ユーザーの投稿一覧 -->
-<%= render 'books/book' %>
+<%= link_to "Edit", edit_user_path(@user.id) %>
+
