@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @profile_images = @user.profile_images if @user.profile_images.attached?
+    @profile_image = @user.get_profile_image
   end
 
   def edit
