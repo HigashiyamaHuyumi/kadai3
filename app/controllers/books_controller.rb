@@ -24,7 +24,7 @@ class BooksController < ApplicationController
 
   def edit #データを更新するためのフォームを表示する
     @book = Book.find(params[:id])
-    flash[:notice] ='Book was successfully updated.'
+    flash[:notice] ='You have updated book successfully.'
     render :edit
   end
 
@@ -32,7 +32,7 @@ class BooksController < ApplicationController
    @book = Book.find(params[:id])
    
     if  @book.update(book_params)
-     flash[:notice] ='Book was successfully updated.'
+     flash[:notice] ='You have updated book successfully.'
      redirect_to book_path(@book.id)
     else
      render :edit

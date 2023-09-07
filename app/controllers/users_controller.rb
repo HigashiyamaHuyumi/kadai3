@@ -14,8 +14,12 @@ class UsersController < ApplicationController
   def update
     is_matching_login_user
     @user = User.find(params[:id]) #ユーザーの取得
-    @user.update(user_params) #ユーザーのアップデート
-    redirect_to user_path(@user) #ユーザーの詳細ページへのパス
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+      flash[:notice] = 'You have updated user successfully.'
+    else
+      render 'edit'
+    end
   end
 
   private
