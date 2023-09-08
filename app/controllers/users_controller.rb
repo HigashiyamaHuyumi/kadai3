@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @profile_image = @user.get_profile_image
+    @book = @user.books.new
   end
 
   def edit
