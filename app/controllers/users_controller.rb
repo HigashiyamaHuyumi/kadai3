@@ -4,12 +4,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @profile_image = @user.get_profile_image
-    @book = @user.books.new
+    @books = @user.books
+    render :show
   end
 
   def edit
     is_matching_login_user
     @user = User.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def update

@@ -1,4 +1,8 @@
-<h1>Book detail</h1>
+<%= render 'users/user_page' %>
+
+<%= render 'books/new_book' %>
+
+<h1>Books</h1>
 
 <table>
   
@@ -13,8 +17,6 @@
     <tr>
       <td><%= link_to @book.title, book_path(@book) %></td>
       <td><%= @book.opinion %></td>
-      <td><%= link_to "Edit", edit_book_path(@book) %></td>
-      <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } %></td>
     </tr>
   </tbody>
   

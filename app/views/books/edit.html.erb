@@ -1,6 +1,6 @@
 <h1>Editing Book</h1>
 
-<%= render 'books/errors' %>  <!-- エラーチェック -->
+<%= render 'books/book_errors' %>  <!-- エラーチェック -->
 
 <%= form_with model: @book do |f| %>
 
@@ -16,5 +16,5 @@
 
 <p>
   <%= link_to "Show", book_path(@book) %> |
-  <%= link_to "Back", books_path %>
+  <%= link_to "Back", '/_index' %>
 </p>
