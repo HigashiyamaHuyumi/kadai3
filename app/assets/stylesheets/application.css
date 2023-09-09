@@ -17,14 +17,20 @@
 @import 'bootstrap';
 
 .navbar.navbar-expand-lg.navbar-light{
-  background-color: #4C444D;
+  background-color: #2C3332;
+ 
 }
 
-.nav-item , .navbar-brand p-3{
-  color: white;
+span{
+  font-size: 2rem;
+  color: #FFFFFF;
 }
 
-.navbar-brand.p-3{
-  size: 25px;
-  color: white;
+.nav-item{
+  color: #FFFFFF;
+}
+
+footer {
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
 }

@@ -1,3 +1,25 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.col-lg-6{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.btn.btn-success{
+  background-color: #00A6A6;
+  color: #ffffff;
+  width: 100%;
+}
+
+.btn.btn-success2{
+  background-color: #0C972F;
+  color: #ffffff;
+  width: 100%;
+}
+
+.btn.btn-success,.btn.btn-success2{
+  margin: 15px;
+}
