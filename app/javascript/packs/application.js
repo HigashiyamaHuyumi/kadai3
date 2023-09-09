@@ -15,12 +15,3 @@ ActiveStorage.start()
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-document.getElementById('toggleButton').addEventListener('click', function() {
-  var details = document.getElementById('content');
-  if (details.open) {
-    details.open = false; // 収納
-  } else {
-    details.open = true; // 展開
-  }
-});

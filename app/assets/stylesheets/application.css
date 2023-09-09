@@ -15,3 +15,16 @@
  */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.navbar.navbar-expand-lg.navbar-light{
+  background-color: #4C444D;
+}
+
+.nav-item , .navbar-brand p-3{
+  color: white;
+}
+
+.navbar-brand.p-3{
+  size: 25px;
+  color: white;
+}
