@@ -16,6 +16,8 @@ class BooksController < ApplicationController
   def index #データの一覧を表示する
    @book = Book.new
    @books = Book.all
+   @user = User.find(params[:id])
+    @profile_image = @user.get_profile_image
   end
 
   def show #データの内容（詳細）を表示する

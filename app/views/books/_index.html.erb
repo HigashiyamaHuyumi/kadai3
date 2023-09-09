@@ -11,6 +11,12 @@
 
      <% @books.each do |book| %>
       <tr>
+        <td><% if @user.profile_image.attached? %>
+          <%= link_to user_path(@user) do %>
+            <%= image_tag @user.profile_image %>
+          <% end %>
+        <% end %>
+        </td>
         <td><%= link_to book.title, book_path(book) %></td>
         <td><%= book.opinion %></td>
       </tr>
