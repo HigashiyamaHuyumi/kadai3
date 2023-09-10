@@ -45,8 +45,8 @@ class BooksController < ApplicationController
     redirect_to books_path # 投稿一覧画面へリダイレクト
   end
   
-  def other_users_books
-    @other_users_books = Book.where.not(user_id: current_user.id)
+  def books
+    @obooks = Book.where.not(user_id: current_user.id)
   end
 
   private
