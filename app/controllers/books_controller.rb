@@ -44,6 +44,10 @@ class BooksController < ApplicationController
     flash[:notice] ='Book was successfully destroyed.'
     redirect_to books_path # 投稿一覧画面へリダイレクト
   end
+  
+  def other_users_books
+    @other_users_books = Book.where.not(user_id: current_user.id)
+  end
 
   private
 

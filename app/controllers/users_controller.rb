@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
-
+  
   def show
     @user = User.find(params[:id])
     @profile_image = @user.get_profile_image
@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     is_matching_login_user
     @user = User.find(params[:id])
   end
+  
+  def index
+    @users = User.all # すべてのユーザーを取得
+  end
 
   def update
     is_matching_login_user
@@ -22,6 +26,13 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def other_users_books
+    other_user_id = params[:user_id]  # 他のユーザーの情報を取得する方法（例：URL パラメータからユーザー ID を取得）
+    @user = User.find(other_user_id) # 他のユーザーの情報を取得して @user に代入
+    @books = @user.books  # 他のユーザーの本の情報を取得する方法（例：User と Book のリレーションシップを使用
+    @profile_image = @user.get_profile_image  # 他のユーザーのプロフィール画像を取得する方法
   end
 
   private
