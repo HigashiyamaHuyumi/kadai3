@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   def edit
     is_matching_login_user
     @user = User.find(params[:id])
-    @book = Book.find(params[:id])
   end
 
   def update
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
 
   def is_matching_login_user
     user = User.find(params[:id])
-    unless user.id == current_user.id
+    unless user.id == current_user
       redirect_to root_path
     end
   end

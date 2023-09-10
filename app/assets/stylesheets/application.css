@@ -31,6 +31,8 @@ span{
 }
 
 footer {
-  position: absolute;/*←絶対位置*/
-  bottom: 0; /*下に固定*/
+  position: absolute; /* 絶対位置指定 */
+  bottom: 0; /* 下部に配置 */
+  left: 0; /* 左端に配置 */
+  right: 0; /* 右端に配置 */
 }
