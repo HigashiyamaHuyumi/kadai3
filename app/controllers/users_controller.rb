@@ -15,7 +15,8 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.all # すべてのユーザーを取得
+    @user = current_user # current_user を設定
+    @users = User.where.not(id: @user.id)
   end
 
   def update

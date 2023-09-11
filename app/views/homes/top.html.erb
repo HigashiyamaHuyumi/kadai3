@@ -10,13 +10,15 @@
   </p>
   <p><br>you can share and exchange your opinions , inpressions , and emotions</p>
   <p>about various books!</p>
+  
+  <div class="col-lg-4">
+    <%= form_with(model: @user, url: user_session_path, method: :post) do |f| %>
+      <%= f.submit "Log in", class: "btn btn-success" %>
+    <% end %>
 
-  <%= form_with(model: @user, url: user_session_path, method: :post) do |f| %>
-    <%= f.submit "Log in", class: "btn btn-success" %>
-  <% end %>
-
-  <%= form_with(model: @user, url: user_registration_path, method: :post) do |f| %>
-    <%= f.submit "Sign up", class: "btn btn-success2" %>
-  <% end %>
+    <%= form_with(model: @user, url: user_registration_path, method: :post) do |f| %>
+      <%= f.submit "Sign up", class: "btn btn-success2" %>
+    <% end %>
+  </div>
 
 </div>

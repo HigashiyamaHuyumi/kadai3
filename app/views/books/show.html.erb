@@ -1,25 +1,26 @@
-<%= render 'users/user_page',user:@user %>
+<%= render 'users/user_page', user: @user %>
 
-<%= render 'books/new_book', book:@new_book %>
+<%= render 'books/new_book', book: @new_book %>
 
 <h1>Book detail</h1>
 
 <table>
 
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Opinion</th>
-    </tr>
-  </thead>
-
   <tbody>
     <tr>
+      <td>
+        <% if @book.user.profile_image.attached? %>
+          <%= image_tag @book.user.profile_image.variant(resize: "100x100") %>
+        <% else %>
+          <%= image_tag "app/assets/images/no_image.jpg", width: 100, height: 100 %>
+        <% end %>
+        <br><%= link_to @book.user.name , user_path(@book.user) %>
+      </td>
       <td><%= link_to @book.title, book_path(@book) %></td>
       <td><%= @book.opinion %></td>
       <td><%= link_to "Edit", edit_book_path(@book) %></td>
       <td>
-        <%= form_with(model: @book, url: book_path(@book), method: :destroy, data: { confirm: '本当に消しますか?' } ) do |f| %>
+        <%= form_with(model: @book, url: book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } ) do |f| %>
           <%= f.submit "Destroy", class: "btn btn-success3" %>
         <% end %>
       </td>
