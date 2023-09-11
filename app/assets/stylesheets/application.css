@@ -16,13 +16,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-.navbar.navbar-expand-lg.navbar-light{
-  background-color: #2C3332;
-}
-
-span{
-  font-size: 2rem;
-  color: #FFFFFF;
+.navbar.navbar-expand-lg.navbar-light{ /*上のバー*/
+  background-color: #2C3332; 
 }
 
 .nav-item{
