@@ -65,3 +65,4 @@ gem 'image_processing', '~> 1.2'
 gem 'bootstrap', '~> 5.0.0'
 
 gem 'net-smtp'
+gem 'font-awesome-rails'

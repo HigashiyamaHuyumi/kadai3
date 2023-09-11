@@ -16,6 +16,9 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 .navbar.navbar-expand-lg.navbar-light{ /*上のバー*/
   background-color: #2C3332; 
 }
@@ -39,4 +42,8 @@ footer {
 .btn.btn-success2{
   background-color: #0C972F;
   color: #ffffff;
+}
+
+.login,.signup{
+  margin: 2rem;
 }
