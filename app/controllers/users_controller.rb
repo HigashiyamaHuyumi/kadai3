@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @profile_image = @user.get_profile_image
     @books = @user.books
+    @new_book = Book.new
     render :show
   end
 
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def other_users_books
+  def books
     other_user_id = params[:user_id]  # 他のユーザーの情報を取得する方法（例：URL パラメータからユーザー ID を取得）
     @user = User.find(other_user_id) # 他のユーザーの情報を取得して @user に代入
     @books = @user.books  # 他のユーザーの本の情報を取得する方法（例：User と Book のリレーションシップを使用

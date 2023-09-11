@@ -1,6 +1,6 @@
-<%= render 'users/user_page' %>
+<%= render 'users/user_page',user:@user %>
 
-<%= render 'books/new_book' %>
+<%= render 'books/new_book', book:@new_book %>
 
 <h1>Book detail</h1>
 
@@ -19,7 +19,7 @@
       <td><%= @book.opinion %></td>
       <td><%= link_to "Edit", edit_book_path(@book) %></td>
       <td>
-        <%= form_with(model: @book, url:  book_path, method: :destroy, data: { confirm: '本当に消しますか?' } ) do |f| %>
+        <%= form_with(model: @book, url: book_path(@book), method: :destroy, data: { confirm: '本当に消しますか?' } ) do |f| %>
           <%= f.submit "Destroy", class: "btn btn-success3" %>
         <% end %>
       </td>

@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index', as: 'users' #全ユーザのページルート
   resources :users, only: [:show, :edit, :update]
   resources :books do
-    collection do
-      get :other_users_books
-    end
+    get 'other_users', on: :collection
   end
 end
