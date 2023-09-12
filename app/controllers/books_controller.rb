@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book)
     else
       @books = Book.all
-      render :index
+      render :'_index.html.erb'
     end
   end
 
