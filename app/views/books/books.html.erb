@@ -3,10 +3,11 @@
 
 <h1>Books</h1>
 
-<table>
+<table class = "table table-striped">
   
   <thead>
     <tr>
+      <th> </th>
       <th>Title</th>
       <th>Opinion</th>
     </tr>
@@ -23,7 +24,7 @@
           <% end %>
         </td>
         <td><%= link_to book.title, book_path(book) %></td>
-        <td><%= book.opinion %></td>
+        <td><%= book.body %></td>
       </tr>
     <% end %>
   </tbody>

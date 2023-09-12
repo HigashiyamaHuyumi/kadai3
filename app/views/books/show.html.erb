@@ -4,7 +4,7 @@
 
 <h1>Book detail</h1>
 
-<table>
+<table class = "table table-striped">
 
   <tbody>
     <tr>
@@ -17,7 +17,7 @@
         <br><%= link_to @book.user.name , user_path(@book.user) %>
       </td>
       <td><%= link_to @book.title, book_path(@book) %></td>
-      <td><%= @book.opinion %></td>
+      <td><%= @book.body %></td>
       <td><%= link_to "Edit", edit_book_path(@book) %></td>
       <td>
         <%= form_with(model: @book, url: book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } ) do |f| %>
