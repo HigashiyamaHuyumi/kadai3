@@ -34,16 +34,16 @@ footer {
   right: 0; /* 右端に配置 */
 }
 
-.btn.btn-success{
-  background-color: #00A6A6;
-  color: #ffffff;
-}
-
-.btn.btn-success2{
-  background-color: #0C972F;
-  color: #ffffff;
+.btn.btn{
+  width: 120px;
+  height: 40px;
+  left: 0;
 }
 
 .login,.signup{
   margin: 2rem;
+}
+
+.fas.fa-user-gear{
+  color:black;
 }

@@ -37,44 +37,52 @@
 
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <i class="fas fa-house"></i>
-                  <%= link_to "Home", user_path(current_user) , class: "nav-link text-white" %> <!--home-->
-                </li>
+                  <%= link_to user_path(current_user) , class: "nav-link text-white" do %>
+                    <i class="fas fa-house" ></i> Home
+                  <% end %>
+                </li> <!--home-->
               
                 <li class="nav-item">
-                  <i class="fas fa-users"></i>
-                  <%= link_to "Users", users_path , class: "nav-link text-white" %>
+                  <%= link_to users_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-users"></i> Users
+                  <% end %>
                 </li> <!--users-->
 
                 <li class="nav-item">
-                  <i class="fas fa-book-open"></i>
-                  <%= link_to 'Books', books_path , class: "nav-link text-white" %>
+                  <%= link_to books_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-book-open"></i> Books
+                  <% end %>
                 </li> <!--books-->
 
                 <li class="nav-item">
-                  <i class="fas fa-right-from-bracket"></i>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "nav-link text-white" %>
+                  <%= link_to destroy_user_session_path, method: :delete , class: "nav-link text-white" do %>
+                    <i class="fas fa-right-from-bracket"></i> ログアウト
+                  <% end %>
                 </li> <!--ログアウト-->
 
               <% else %>
                 <li class="nav-item">
-                  <i class="fas fa-house"></i>
-                  <%= link_to "Home", root_path , class: "nav-link text-white" %> <!--home-->
-                </li>
+                  <%= link_to root_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-house"></i> Home
+                  <% end %>
+                </li> <!--home-->
             
                 <li class="nav-item">
-                  <i class="fas fa-link"></i>
-                  <%= link_to "about", home_about_path , class: "nav-link text-white" %>
+                  <%= link_to home_about_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-link"></i> about
+                  <% end %>
                 </li> <!--about-->
               
                 <li class="nav-item">
-                  <i class="fas fa-user-plus"></i>
-                  <%= link_to "Sign up", new_user_registration_path , class: "nav-link text-white" %>
+                  <%= link_to new_user_registration_path , class: "nav-link text-white" do%>
+                    <i class="fas fa-user-plus"></i> Sign up
+                  <% end %>
                 </li> <!--sign up-->
               
                 <li class="nav-item">
-                  <i class="fas fa-right-to-bracket"></i>
-                  <%= link_to "Log in", new_user_session_path , class: "nav-link text-white" %>
+                  <%= link_to new_user_session_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-right-to-bracket"></i> Log in
+                  <% end %>
                 </li> <!--log in-->
               
               <% end %>

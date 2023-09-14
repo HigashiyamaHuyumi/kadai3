@@ -18,10 +18,14 @@
       </td>
       <td><%= link_to @book.title, book_path(@book) %></td>
       <td><%= @book.body %></td>
-      <td><%= link_to "Edit", edit_book_path(@book) %></td>
+      <td>
+        <%= link_to edit_book_path(@book), class: "btn btn-success" do %>
+          Edit
+        <% end %>
+      </td>
       <td>
         <%= form_with(model: @book, url: book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } ) do |f| %>
-          <%= f.submit "Destroy", class: "btn btn-success3" %>
+          <%= f.submit "Destroy", class: "btn btn-danger" %>
         <% end %>
       </td>
     </tr>

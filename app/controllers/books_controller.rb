@@ -49,8 +49,7 @@ class BooksController < ApplicationController
   end
 
   def books
-    @user = current_user # current_user を設定
-    @books = Book.where.not(user_id: @user.id)
+    @books = Book.all
   end
 
   private
