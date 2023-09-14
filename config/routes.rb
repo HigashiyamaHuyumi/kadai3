@@ -7,9 +7,5 @@ Rails.application.routes.draw do
   get '/books', to: 'books#books', as: 'books' #全ての投稿一覧のページルート
   get '/users', to: 'users#index', as: 'users' #全ユーザのページルート
   resources :users, only: [:show, :edit, :update]
-  resources :books do
-    collection do
-      get 'other_users'
-    end
-  end
+  resources :books
 end

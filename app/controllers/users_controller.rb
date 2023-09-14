@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
   
   def index
-    @user = current_user # current_user を設定
-    @users = User.where.not(id: @user.id)
+    @users = User.all
+    @current_user = current_user
   end
 
   def update
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def books
+  def book
     other_user_id = params[:user_id]  # 他のユーザーの情報を取得する方法（例：URL パラメータからユーザー ID を取得）
     @user = User.find(other_user_id) # 他のユーザーの情報を取得して @user に代入
     @books = @user.books  # 他のユーザーの本の情報を取得する方法（例：User と Book のリレーションシップを使用

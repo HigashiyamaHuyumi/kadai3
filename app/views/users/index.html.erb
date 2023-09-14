@@ -1,4 +1,4 @@
-<%= render 'users/user_page',user: @user %>
+<%= render 'users/user_page', user: @current_user %>
 <%= render 'books/new_book',book: @new_book %>
 
 <h1>Users</h1>
@@ -9,7 +9,6 @@
     <tr>
       <th>image</th>
       <th>name</th>
-      <th> </th>
     </tr>
   </thead>
 
@@ -20,7 +19,7 @@
           <% if user.profile_image.attached? %>
             <%= image_tag user.profile_image.variant(resize: "100x100") %>
           <% else %>
-            <%= image_tag "app/assets/images/no_image.jpg", width: 100, height: 100 %>
+            <%= image_tag "no_image.jpg", width: 100, height: 100 %>
           <% end %>
         </td>
         <td><%= user.name %></td>
