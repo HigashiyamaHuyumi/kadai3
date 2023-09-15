@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user' #ログイン後のページルート
   get '/books', to: 'books#books', as: 'books' #全ての投稿一覧のページルート
   get '/users', to: 'users#index', as: 'users' #全ユーザのページルート
-  resources :users, only: [:show, :edit, :update]
   resources :books
+  resources :users, only: [:show, :edit, :update]
 end

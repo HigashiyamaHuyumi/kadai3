@@ -1,6 +1,16 @@
 <!-- 本の投稿一覧 -->
 
-<%= render 'users/user_page', user: @current_user %>
-<%= render 'books/new_book', book: @new_book %>
+<div class="container">
+  <div class="row">
+    
+    <div class="col-lg-4">
+      <%= render 'users/user_page', user: @current_user %>
+    </div>
 
-<%= render 'books/index' ,books: @books %>
+    <div class="col-lg-8">
+      <%= render 'books/index' ,books: @books %>
+    </div>
+    
+  </div>
+</div>
+

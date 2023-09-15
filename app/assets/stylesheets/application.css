@@ -34,7 +34,7 @@ footer {
   right: 0; /* 右端に配置 */
 }
 
-.btn.btn{
+.btn.btn{ /* ボタン */
   width: 120px;
   height: 40px;
   left: 0;
