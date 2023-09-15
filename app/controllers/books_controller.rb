@@ -50,6 +50,7 @@ class BooksController < ApplicationController
 
   def books
     @books = Book.all
+    @current_user = current_user
   end
 
   private

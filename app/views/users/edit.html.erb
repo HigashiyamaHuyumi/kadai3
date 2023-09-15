@@ -1,13 +1,22 @@
-<h2>User info</h2>
-<%= form_with model: @user do |f| %>
-  <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%>
-
-  <label for="inputImage">ProfileImage</label>
-  <%= f.file_field :profile_image, accept: "image/*" %>
-
-  <label for="inputintroduction">Introduction</label>
-  <%= f.text_field :introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction"%>
-
-  <%= f.submit "Update User" %>
-<% end %>
+<div class="container center">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      
+    <h2>User info</h2>
+    
+      <%= form_with model: @user do |f| %>
+        <label for="inputName">Name</label><br>
+        <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%><br>
+        
+        <label for="inputImage">Image</label><br>
+        <%= f.file_field :profile_image, accept: "image/*" %><br>
+    
+        <label for="inputintroduction">Introduction</label><br>
+        <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction"%><br>
+    
+        <%= f.submit "Update User", class: "btn btn-dark" %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>

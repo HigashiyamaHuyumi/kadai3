@@ -12,10 +12,12 @@ class UsersController < ApplicationController
   def edit
     is_matching_login_user
     @user = User.find(params[:id])
+    @current_user = current_user
   end
   
   def index
     @users = User.all
+    @current_user = current_user
   end
 
   def update
@@ -30,9 +32,9 @@ class UsersController < ApplicationController
   end
   
   def book
-    other_user_id = params[:user_id]  # 他のユーザーの情報を取得する方法（例：URL パラメータからユーザー ID を取得）
+    other_user_id = params[:user_id]  # 他のユーザーの情報を取得する
     @user = User.find(other_user_id) # 他のユーザーの情報を取得して @user に代入
-    @books = @user.books  # 他のユーザーの本の情報を取得する方法（例：User と Book のリレーションシップを使用
+    @books = @user.books  # 他のユーザーの本の情報を取得する方法
     @profile_image = @user.get_profile_image  # 他のユーザーのプロフィール画像を取得する方法
   end
 

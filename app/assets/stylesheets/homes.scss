@@ -2,14 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .col-lg-6{
-  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.btn.btn-success,.btn.btn-success2{
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 15px;
+.btn{
+  width: 90%;
+  margin: 10px;
 }

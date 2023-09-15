@@ -35,7 +35,7 @@ footer {
 }
 
 .btn.btn{ /* ボタン */
-  width: 120px;
+  width: auto;
   height: 40px;
   left: 0;
 }

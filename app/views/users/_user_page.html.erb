@@ -24,7 +24,7 @@
 </table>
 
 
-<% if current_user == user %>
+<% if current_user == user %><!-- ユーザが一致の時編集ページ、違うとき自分のページに移動する　-->
   <%= link_to edit_user_path(user), class: "btn btn-light btn-outline-dark" do %>
     <i class="fas fa-user-gear"></i>
   <% end %>
