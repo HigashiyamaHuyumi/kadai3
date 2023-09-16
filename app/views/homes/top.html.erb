@@ -1,24 +1,22 @@
-<div class="col-lg-6">
-
-  <h1>welcome to
-    <i class="fas fa-book"></i>
-    Bookers!!
-  </h1>
-
-  <p>In<i class="fas fa-book"></i><b>Bookers</b>,</p>
-
-  <p><br>you can share and exchange your opinions , inpressions , and emotions</p>
-  <p>about various books!</p>
-
-  <div class="col-lg-4">
-    <%= form_with(model: @user, url: user_session_path, method: :post) do |f| %>
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-    
-    <%= link_to new_user_registration_path , class: "btn btn-success" do %>
-      Sign up
-    <% end %>
-    
+<div class="row center">
+  <div class="col-md-6">
+  
+    <h1>welcome to
+      <i class="fas fa-book"></i>
+      Bookers!!
+    </h1>
+  
+    <p>In<i class="fas fa-book"></i><b>Bookers</b>,</p>
+  
+    <p><br>you can share and exchange your opinions , inpressions , and emotions</p>
+    <p>about various books!</p>
+  
+    <div class="row">
+      <a class="btn btn-info sign_in" href="/users/sign_in">Log in</a>
+    </div>
+    <div class="row">
+      <a class="btn btn-success sign_up" href="/users/sign_up">Sign up</a>
+    </div>
+  
   </div>
-
 </div>

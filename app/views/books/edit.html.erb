@@ -1,29 +1,27 @@
-<div class="container center">
-  <div class="row justify-content-center">
-    <div class="col-6">
+<div class="row justify-content-center">
+  <div class="col-6">
 
-    <h1>Editing Book</h1>
+  <h1>Editing Book</h1>
+  
+  <%= render 'books/book_errors' ,book: @book %>  <!-- エラーチェック -->
+  
+  <%= form_with model: @book do |f| %>
+  
+   <h4>Title</h4>
+   <%= f.text_field :title %>
+   
+    <h4>Opinion</h4>
+    <%= f.text_area :body %>
     
-    <%= render 'books/book_errors' ,book: @book %>  <!-- エラーチェック -->
-    
-    <%= form_with model: @book do |f| %>
-    
-     <h4>Title</h4>
-     <%= f.text_field :title %>
-     
-      <h4>Opinion</h4>
-      <%= f.text_area :body %>
-      
-      <br>
-      <%= f.submit 'Update Book' ,class: "btn btn-success" %>
-     
-    <% end %>
-    
-    <p>
-      <%= link_to "Show", book_path(@book) %> |
-      <%= link_to "Back", books_path %>
-    </p>
-    
-    </div>
+    <br>
+    <%= f.submit 'Update Book' ,class: "btn btn-success" %>
+   
+  <% end %>
+  
+  <p>
+    <%= link_to "Show", book_path(@book) %> |
+    <%= link_to "Back", books_path %>
+  </p>
+  
   </div>
 </div>

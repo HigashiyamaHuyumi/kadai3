@@ -23,7 +23,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand p-3" href="/">
+        <a class="navbar-brand" href="/">
           <%= link_to "Bookers", root_path, style: "font-size: 2rem; color: #FFFFFF;" %>
         </a>
 
@@ -68,7 +68,7 @@
           
               <li class="nav-item">
                 <%= link_to home_about_path , class: "nav-link text-white" do %>
-                  <i class="fas fa-link"></i> about
+                  <i class="fas fa-link"></i> About
                 <% end %>
               </li> <!--about-->
             
@@ -90,12 +90,12 @@
         </div>
       </nav>
     </header>
+  
+  <div class="container">
 
     <%= flash[:notice] %>
 
-    <footer>
-      <p class="text-center">CopyRight Infratop.inc</p>
-    </footer>
+  </div>
     
     <%= yield %>
   </body>

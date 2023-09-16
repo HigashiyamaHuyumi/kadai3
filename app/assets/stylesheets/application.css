@@ -40,10 +40,6 @@ footer {
   left: 0;
 }
 
-.login,.signup{
-  margin: 2rem;
-}
-
 .fas.fa-user-gear{
   color:black;
 }
