@@ -16,72 +16,72 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
-      <div class="container">
-        <div class="navbar-brand" href="/">
-          <%= link_to "Bookers", root_path, style: "font-size: 2rem; color: #FFFFFF;" %>
-        </div>
+        <div class="container">
+          <div class="navbar-brand" href="/">
+            <%= link_to "Bookers", root_path, style: "font-size: 2rem; color: #FFFFFF;" %>
+          </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-
-            <% if user_signed_in? %> <!--ログインしているときの表示-->
-              <li class="nav-item">
-                <%= link_to user_path(current_user) , class: "nav-link text-white" do %>
-                  <i class="fas fa-home" ></i> Home
-                <% end %>
-              </li> <!--home-->
-
-              <li class="nav-item">
-                <%= link_to users_path , class: "nav-link text-white" do %>
-                  <i class="fas fa-users"></i> Users
-                <% end %>
-              </li> <!--users-->
-
-              <li class="nav-item">
-                <%= link_to books_path , class: "nav-link text-white" do %>
-                  <i class="fas fa-book-open"></i> Books
-                <% end %>
-              </li> <!--books-->
-
-              <li class="nav-item">
-                <%= link_to destroy_user_session_path, method: :delete , class: "nav-link text-white" do %>
-                  <i class="fas fa-right-from-bracket"></i> Log out
-                <% end %>
-              </li> <!--ログアウト-->
-
-            <% else %><!--ログアウトしているときの表示-->
-              <li class="nav-item">
-                <%= link_to root_path , class: "nav-link text-white" do %>
-                  <i class="fas fa-home"></i> Home
-                <% end %>
-              </li> <!--home-->
-
-              <li class="nav-item">
-                <%= link_to home_about_path , class: "nav-link text-white" do %>
-                  <i class="fas fa-link"></i> About
-                <% end %>
-              </li> <!--about-->
-
-              <li class="nav-item">
-                <%= link_to new_user_registration_path , class: "nav-link text-white" do%>
-                  <i class="fas fa-user-plus"></i> Sign up
-                <% end %>
-              </li> <!--sign up-->
-
-              <li class="nav-item">
-                <%= link_to new_user_session_path , class: "nav-link text-white" do %>
-                  <i class="fas fa-right-to-bracket"></i> Log in
-                <% end %>
-              </li> <!--log in-->
-
-            <% end %>
-
-          </ul>
-        </div>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+  
+              <% if user_signed_in? %> <!--ログインしているときの表示-->
+                <li class="nav-item">
+                  <%= link_to user_path(current_user) , class: "nav-link text-white" do %>
+                    <i class="fas fa-home" ></i> Home
+                  <% end %>
+                </li> <!--home-->
+  
+                <li class="nav-item">
+                  <%= link_to users_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-users"></i> Users
+                  <% end %>
+                </li> <!--users-->
+  
+                <li class="nav-item">
+                  <%= link_to books_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-book-open"></i> Books
+                  <% end %>
+                </li> <!--books-->
+  
+                <li class="nav-item">
+                  <%= link_to destroy_user_session_path, method: :delete , class: "nav-link text-white" do %>
+                    <i class="fas fa-right-from-bracket"></i> Log out
+                  <% end %>
+                </li> <!--ログアウト-->
+  
+              <% else %><!--ログアウトしているときの表示-->
+                <li class="nav-item">
+                  <%= link_to root_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-home"></i> Home
+                  <% end %>
+                </li> <!--home-->
+  
+                <li class="nav-item">
+                  <%= link_to home_about_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-link"></i> About
+                  <% end %>
+                </li> <!--about-->
+  
+                <li class="nav-item">
+                  <%= link_to new_user_registration_path , class: "nav-link text-white" do%>
+                    <i class="fas fa-user-plus"></i> Sign up
+                  <% end %>
+                </li> <!--sign up-->
+  
+                <li class="nav-item">
+                  <%= link_to new_user_session_path , class: "nav-link text-white" do %>
+                    <i class="fas fa-right-to-bracket"></i> Log in
+                  <% end %>
+                </li> <!--log in-->
+  
+              <% end %>
+  
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

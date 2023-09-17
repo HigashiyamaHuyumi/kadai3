@@ -19,10 +19,6 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-.navbar.navbar-expand-lg.navbar-light{ /*上のバー*/
-  background-color: #2C3332; 
-}
-
 .nav-item{
   color: #FFFFFF;
 }
