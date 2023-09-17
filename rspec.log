@@ -495,7 +495,7 @@ Failures:
 
   23) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 自分の名前と紹介文が表示される
       [31mFailure/Error: expect(page).to have_content user.name[0m
-      [31m  expected to find text "yjscsaiumn" in "Bookers\nHome Users Books Log out\nUser info\nNew book\nTitle\nOpinion\nBooks\nTitle Opinion rj7qj y952s64jdtjf4ig8r2gf 10be5 qvrvlcxcd332f5bj4qsw"[0m
+      [31m  expected to find text "zgyd8pexgi" in "Bookers\nHome Users Books Log out\nUser info\nNew book\nTitle\nOpinion\nBooks\nTitle Opinion wxoij atzlyyumalm6nse8avnj tcels 59ll8gfotbsit6vd7rhl"[0m
       [36m# ./spec/system/02_after_login_spec.rb:66:in `block (4 levels) in <main>'[0m
 
   24) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する
@@ -670,7 +670,7 @@ Failures:
 
   40) [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザログアウト成功時
       [31mFailure/Error: is_expected.to have_content 'successfully'[0m
-      [31m  expected to find text "successfully" in "Bookers\nHome Users Books Log out\nUser info\nNew book\nTitle\nOpinion\nBooks\nTitle Opinion 8p8wq d9j2o7fbg8jywkpitubd 4dppf q7xuqnqs17blpl8e03ho"[0m
+      [31m  expected to find text "successfully" in "Bookers\nHome Users Books Log out\nUser info\nNew book\nTitle\nOpinion\nBooks\nTitle Opinion sv0v0 8f2k00wvmdab38dzbt11 5ur6x c4lcxbwewcmuzewap4e5"[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:36:in `block (3 levels) in <main>'[0m
 
   41) [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの新規投稿成功時: 投稿一覧画面から行います。
@@ -836,7 +836,7 @@ Failures:
       [31m  expected to find css ".fa-solid.fa-user-cog, .fas.fa-user-cog" but there were no matches[0m
       [36m# ./spec/system/03_finishing_touches_spec.rb:449:in `block (4 levels) in <main>'[0m
 
-Finished in 26.99 seconds (files took 1.56 seconds to load)
+Finished in 28.51 seconds (files took 1.91 seconds to load)
 [31m199 examples, 61 failures[0m
 
 Failed examples:
