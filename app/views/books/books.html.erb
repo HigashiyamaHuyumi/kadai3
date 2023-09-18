@@ -1,6 +1,4 @@
 <!-- すべての本の投稿一覧 -->
-
-
 <div class="row justify-content-center">
 
   <div class="col-md-4">
@@ -8,7 +6,7 @@
   </div>
 
   <div class="col-md-8">
-    <%= render 'books/index' ,books: @books %>
+    <%= render 'books/index' ,books: @books ,book: @book ,user: @user %>
   </div>
 
 </div>
