@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     @profile_image = @user.get_profile_image if @user.present?
   end
 
-  def edit #データを更新するためのフォームを表示する
+  def edit #データを更新するためのフォームを表示す
     @book = Book.find(params[:id])
   end
 

@@ -9,10 +9,11 @@ class UsersController < ApplicationController
     render :show
   end
 
-  def edit
+  def edit #データを更新するためのフォームを表示する
     is_matching_login_user
     @user = User.find(params[:id])
     @current_user = current_user
+    
   end
 
   def index

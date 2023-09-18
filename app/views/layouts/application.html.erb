@@ -36,7 +36,7 @@
   
                 <li class="nav-item">
                   <%= link_to users_path , class: "nav-link text-white" do %>
-                    <i class="fas fa-user-cog"></i> Users
+                    <i class="fas fa-users"></i> Users
                   <% end %>
                 </li> <!--users-->
   
@@ -86,10 +86,10 @@
       </nav>
     </header>
 
-  <div class="container">
+  
     <%= flash[:notice] %>
-    <%= yield %>
   </div>
   
+  <%= yield %>
   </body>
 </html>
