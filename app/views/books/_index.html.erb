@@ -14,34 +14,16 @@
   <tbody>
     <% books.each do |book| %>
       <tr>
-
         <td>
-          <% if book.user.present? && user.present? %> <!--@bookと@userがともに存在 -->
-            <% if book.user == current_user %><!-- 自分の投稿の場合 -->
-              <% if user.profile_image.attached? %><!-- 画像がある場合 -->
-                <%= link_to user_path(current_user) do %>
-                  <%= image_tag book.user.profile_image.variant(resize: "100x100") %>
-                <% end %>
-              <% else %>
-                <%= link_to user_path(current_user) do %>
-                  <%= image_tag "no_image.jpg", width: 100, height: 100 %>
-                <% end %>
-              <% end %>
-
-            <% else %> <!-- 他人の投稿の場合 -->
-              <% if user.profile_image.attached? %><!-- 画像がある場合 -->
-                <%= link_to user_path(book.user) do %>
-                  <%= image_tag book.user.profile_image.variant(resize: "100x100") %>
-                <% end %>
-              <% else %>
-                <%= link_to user_path(book.user) do %>
-                  <%= image_tag "no_image.jpg", width: 100, height: 100 %>
-                <% end %>
-              <% end %>
-
+          <% if book.user.present? && user.present? %> <!-- @bookと@userがともに存在 -->
+            <% target_user = book.user == current_user ? current_user : book.user %>
+            <% image_tag_source = target_user.profile_image.attached? ? target_user.profile_image.variant(resize: "100x100") : "no_image.jpg" %>
+  
+            <%= link_to user_path(target_user) do %>
+              <%= image_tag image_tag_source, width: 100, height: 100 %>
             <% end %>
           <% end %>
-
+        </td>
         </td>
 
         <td><%= link_to book.title, book_path(book) %></td>

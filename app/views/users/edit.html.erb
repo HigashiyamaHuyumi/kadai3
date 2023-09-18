@@ -1,11 +1,19 @@
 <!--ユーザの編集画面-->
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row">
     <div class="col-6">
       
     <h2>User info</h2>
     
-    <%= render 'users/user_errors', user: @user %>
+      <!-- バリデーション機能 -->
+      <% if @user.present? && @user.errors.any? %>
+      <%= @user.errors.count %> errors prohibited this obj from being saved:
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
     
       <%= form_with model: @user do |f| %>
         <label for="inputName">Name</label><br>

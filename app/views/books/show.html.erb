@@ -1,34 +1,34 @@
 <!-- 投稿詳細ページ -->
 <div class="container">
   <div class="row">
-  
+
     <div class="col-md-3">
       <%= render 'users/user_page', user: @user, book: @new_book %>
     </div>
-  
-    <div class="col-md-8">
-    
+
+    <div class="col-md-8 offset-md-1">
+
       <h1>Book detail</h1>
-    
+
       <table class = "table table-striped">
-    
+
         <tbody>
           <tr>
-    
+
             <td>
               <% if @book.present? && @user.present? %> <!-- @bookと@userがともに存在 -->
                 <% user_link = @book.user == current_user ? user_path(current_user) : user_path(@user) %>
                 <% image_tag_source = @user.profile_image.attached? ? @user.profile_image.variant(resize: "100x100") : "no_image.jpg" %>
-    
+
                 <%= link_to user_link do %>
                   <%= image_tag image_tag_source, width: 100, height: 100 %>
                 <% end %>
-    
+
                 <br>
                 <%= link_to @book.user.name, user_path(@user) %>
               <% end %>
             </td>
-    
+
             <td><%= link_to @book.title, book_path(@book) %></td>
             <td><%= @book.body %></td>
             <% if user_signed_in? && current_user == @book.user %>
@@ -38,18 +38,18 @@
                 <% end %>
               </td>
               <td>
-                <%= link_to book_path(@book), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？"  do %>
+                <%= link_to book_path(@book), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に消しますか？"  do %>
                   Destroy
                 <% end %>
               </td>
             <% end %>
           </tr>
         </tbody>
-    
+
       </table>
-    
+
     </div>
   </div>
 </div>
-  
+
 <%= render 'layouts/footer' %>
