@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
-  
+
   def show
     @user = User.find(params[:id])
     @profile_image = @user.get_profile_image
@@ -14,8 +14,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @current_user = current_user
   end
-  
+
   def index
+    @new_book = Book.new
     @users = User.all
     @current_user = current_user
   end
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-  
+
   def book
     other_user_id = params[:user_id]  # 他のユーザーの情報を取得する
     @user = User.find(other_user_id) # 他のユーザーの情報を取得して @user に代入

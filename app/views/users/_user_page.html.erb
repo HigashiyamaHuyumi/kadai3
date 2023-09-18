@@ -34,6 +34,34 @@
   <% end %>
 <% end %>
 
+<!-- 新規投稿 -->
 <div class="row">
-  <%= render 'books/new_book',book: @new_book %>
+  <div class="text-left">
+    <h2>New book</h2>
+
+    <!-- エラーチェック -->
+    <% if book.errors.any? %>
+      <%= book.errors.count %> errors prohibited this obj from being saved:
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= form_with model: Book.new, url: books_path, method: :post do |f| %>
+
+      <label>Title</label>
+      <br>
+      <%= f.text_field :title %>
+      <br>
+      <label>Opinion</label>
+      <br>
+      <%= f.text_area :body %>
+      <br>
+      <%= f.submit'Create Book', class: "btn btn-success" %>
+
+    <% end %>
+
+  </div>
 </div>

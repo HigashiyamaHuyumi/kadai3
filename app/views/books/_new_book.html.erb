@@ -2,18 +2,20 @@
 <div class="text-left">
   <h2>New book</h2>
 
-  <%= render 'books/book_errors' ,book: @book %> <!-- エラーチェック -->
-  
-  <%= form_with model: book, url: books_path, method: :post do |f| %>
-  
-    <h4>Title</h4>
+  <%= render 'books/book_errors' ,book: book %> <!-- エラーチェック -->
+
+  <%= form_with model: Book.new, url: books_path, method: :post do |f| %>
+
+    <label>Title</label>
+    <br>
     <%= f.text_field :title %>
-  
-    <h4>Opinion</h4>
+    <br>
+    <label>Opinion</label>
+    <br>
     <%= f.text_area :body %>
-  
-    <br><%= f.submit'Create Book', class: "btn btn-success" %>
-  
+    <br>
+    <%= f.submit'Create Book', class: "btn btn-success" %>
+
   <% end %>
-  
+
 </div>

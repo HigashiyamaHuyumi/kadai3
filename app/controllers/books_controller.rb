@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   end
 
   def index # データの一覧を表示する
+    @new_book = Book.new
     @book = Book.new
     @user = current_user
     @books = @user.books
@@ -49,6 +50,7 @@ class BooksController < ApplicationController
   end
 
   def books
+    @book = Book.new
     @books = Book.all
     @user = current_user
   end
