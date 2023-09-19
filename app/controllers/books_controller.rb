@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :is_matching_login_user, only: [:edit, :update]
 
   def create #データを追加（保存）する
     @book = Book.new(book_params)
@@ -8,17 +9,15 @@ class BooksController < ApplicationController
       redirect_to book_path(@book)
     else
       @user = current_user
-      @books = Book.where(user_id: @user.id)
-      render :'books'
+      @books = Book.all
+      render :index
     end
   end
 
   def index # データの一覧を表示する
-    @new_book = Book.new
     @book = Book.new
+    @books = Book.all
     @user = current_user
-    @books = @user.books
-    @profile_image = @user.get_profile_image
   end
 
   def show #データの内容（詳細）を表示する
@@ -59,6 +58,13 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :body)
+  end
+
+  def is_matching_login_user
+    book = Book.find(params[:id])
+    unless book.user_id == current_user.id
+      redirect_to books_path
+    end
   end
 
 end

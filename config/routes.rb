@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get '/users/:id', to: 'users#show', as: 'user' #ログイン後のページルート(投稿一覧)
-  get '/books', to: 'books#books', as: 'books' #全ての投稿一覧のページルート
-  get '/users', to: 'users#index', as: 'users' #全ユーザのページルート
-  resources :books
-  resources :users, only: [:show, :edit, :update]
+  #get '/books', to: 'books#books', as: 'books' #全ての投稿一覧のページルート
+  #get '/users', to: 'users#index', as: 'users' #全ユーザのページルート
+  resources :books, only: [:index, :show, :create, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :edit, :update]
 end
